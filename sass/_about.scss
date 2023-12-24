@@ -1,0 +1,283 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+about
+===============================*/
+.about__wrapper {
+  background: color.$main-color;
+}
+.about {
+  padding: 130px 180px 100px;
+
+  max-width: 1439px;
+  margin: 0 auto;
+  @include mixin.mq(tab) {
+    padding: 120px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  @include mixin.mq(sp) {
+    padding: 64px 16px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.about__inner {
+}
+
+.about__heading {
+}
+
+.about__items {
+  margin-top: 100px;
+  @include mixin.mq(sp) {
+    margin-top: 56px;
+  }
+}
+
+.about__item {
+  display: flex;
+  align-items: center;
+  gap: 67px;
+  @include mixin.mq(tab) {
+    gap: 30px;
+  }
+  @include mixin.mq(sp) {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  & + & {
+    margin-top: 64px;
+    @include mixin.mq(sp) {
+      margin-top: 20px;
+      &:nth-of-type(3) {
+        margin-top: 40px;
+      }
+    }
+  }
+  &:nth-of-type(2) {
+    flex-direction: row-reverse;
+    @include mixin.mq(sp) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.about__item3{
+  margin-top: -20px;
+}
+
+.about__item-left {
+  img {
+    width: 450px;
+
+    @include mixin.mq(tab) {
+      width: 350px;
+    }
+    @include mixin.mq(sp) {
+      width: 100%;
+    }
+  }
+}
+.about__item-left3 {
+  margin-top: 16px;
+}
+
+.about__item-right {
+  position: relative;
+  @include mixin.mq(sp) {
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  &::after {
+    content: "01";
+    position: absolute;
+    top: -100px;
+    right: -160px;
+    width: 322px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: font.$font-en;
+    font-size: 28.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 17.28px;
+    z-index: 1;
+    @include mixin.mq(tab) {
+      width: 100%;
+    }
+    @include mixin.mq(sp) {
+      font-size: 18rem;
+      top:auto;
+      bottom: -50px;
+      right: -140px;
+    } 
+  }
+}
+.about__item-right2 {
+  position: relative;
+  width: 600px;
+  padding-bottom: 32px;
+  @include mixin.mq(tab) {
+    width: 100%;
+  }
+  @include mixin.mq(sp) {
+    width: 100%;
+  }
+
+  &::after {
+    content: "02";
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    width: 322px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: font.$font-en;
+    font-size: 28.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 17.28px;
+    z-index: 1;
+    @include mixin.mq(tab) {
+      width: 100%;
+    }
+    @include mixin.mq(sp) {
+      font-size: 18rem;
+      top: auto;
+      bottom: -50px;
+      right: -110px;
+    }
+  }
+}
+.about__item-right3 {
+  position: relative;
+  margin-top: 20px;
+  @include mixin.mq(sp) {
+    width: 100%;
+    padding-bottom: 32px;
+    margin-top: 0;
+  }
+
+  &::after {
+    content: "03";
+    position: absolute;
+    top: -100px;
+    right: -110px;
+    width: 322px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: font.$font-en;
+    font-size: 28.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 17.28px;
+    z-index: 1;
+    @include mixin.mq(tab) {
+      width: 100%;
+    }
+    @include mixin.mq(sp) {
+      font-size: 18rem;
+      top: auto;
+      bottom: -65px;
+      right: -110px;
+    }
+  }
+}
+
+.about__item-title {
+  position: relative;
+  z-index: 3;
+  margin-top: 8px;
+  color: color.$base-color2;
+  font-family: font.$font-ja;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  span {
+    color: color.$accent-color;
+    @include mixin.mq(tab) {
+      font-size: 2.5rem;
+    }
+    @include mixin.mq(sp) {
+      font-size: 2.4rem;
+      letter-spacing: 1.2px;
+    }
+  }
+  @include mixin.mq(tab) {
+    font-size: 2.5rem;
+  }
+  @include mixin.mq(sp) {
+    font-size: 2.4rem;
+    letter-spacing: 1.2px;
+  }
+}
+.about__item-title2 {
+  @include mixin.mq(sp) {
+    font-size: 2.1rem;
+    letter-spacing: 1.8px;
+    margin-top: 42px;
+  }
+}
+.about__item-title3 {
+  @include mixin.mq(sp) {
+    margin-top: 20px;
+  }
+}
+.about__item-text {
+  position: relative;
+  z-index: 3;
+  margin-top: 24px;
+  color: color.$base-color2;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: 0.54px;
+  width: 400px;
+  @include mixin.mq(tab) {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  @include mixin.mq(sp) {
+    margin-top: 16px;
+    font-size: 1.6rem;
+    letter-spacing: 0.48px;
+    width: 100%;
+  }
+}
+
+.thumbnail-pc {
+  width: 100%;
+  height: 450px;
+  background-image: url("../img/about__bottom-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+.thumbnail-sp {
+  width: 100%;
+  height: 250px;
+  background-image: url("../img/sp/about__item-bottom-image.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  @include mixin.mq(pc) {
+    display: none;
+  }
+  @include mixin.mq(tab) {
+    display: none;
+  }
+}

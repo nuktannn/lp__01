@@ -1,0 +1,88 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+concept
+===============================*/
+.concept {
+  padding: 120px 0 110px;
+  position: relative;
+  overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include mixin.mq(sp) {
+    padding: 55px 0 63px;
+    margin: 0 auto;
+  }
+}
+
+.concept__inner {
+}
+
+.concept__wrapper {
+  text-align: center;
+}
+
+.concept__title {
+  color: #fff;
+  font-family: font.$font-ja;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 1.5px;
+  @include mixin.mq(sp) {
+    font-size: 2rem;
+  }
+}
+
+.concept__text {
+  margin-top: 48px;
+  color: #fff;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.54px;
+  @include mixin.mq(sp) {
+    font-size: 1.6rem;
+    letter-spacing: 0.48px;
+    margin-top: 24px;
+  }
+}
+
+.concept__bg-title-pc {
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  color: rgba(103, 103, 103, 0.3);
+  font-family: font.$font-en;
+  font-size: 28rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 280px;
+  white-space: nowrap;
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+.concept__bg-title-sp {
+  @include mixin.mq(pc) {
+    display: none;
+  }
+  @include mixin.mq(tab) {
+    display: none;
+  }
+  color: rgba(103, 103, 103, 0.3);
+  text-align: right;
+  font-family: font.$font-en;
+  font-size: clamp(11rem, 30vw, 25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80%;
+  letter-spacing: 3.3px;
+  position: absolute;
+  bottom:0px;
+}

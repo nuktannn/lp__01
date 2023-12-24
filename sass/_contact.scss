@@ -1,0 +1,436 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+contact
+===============================*/
+.contact {
+  padding: 130px 0;
+  background: url(../img/contact__bg.png) no-repeat center center / cover;
+  height: 1292px;
+  width: 100%;
+
+  @include mixin.mq(sp) {
+   padding: 64px 16px;
+    height: auto;
+  }
+}
+
+.contact__inner {
+  background: color.$main-color;
+  padding: 64px 140px 72px;
+  max-width: 800px;
+  margin: 0 auto;
+  @include mixin.mq(sp) {
+    width: 100%;
+   padding: 64px 15px;
+  }
+}
+
+.contact__heading {
+  text-align: center;
+}
+
+.contact__heading-text {
+  margin-top: 40px;
+  color: color.$base-color2;
+  font-family: font.$font-ja;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  @include mixin.mq(sp) {
+    text-align: left;
+    display: inline-block;
+    margin-top: 65px;
+    font-size: 1.5rem;
+  }
+}
+
+.contact__form {
+  max-width: 520px;
+  margin: 50px auto 0;
+  @include mixin.mq(sp) {
+    margin-top: 28px;
+    width: 100%;
+  }
+}
+
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact__field {
+  &:nth-of-type(2){
+    margin-top: -5px;
+    @include mixin.mq(sp) {
+        margin-top: 5px;
+    }
+  }
+  &:nth-of-type(3){
+    margin-top: -5px;
+    @include mixin.mq(sp) {
+        margin-top: 0px;
+    }
+  }
+  &:nth-of-type(4){
+    margin-top: -5px;
+    @include mixin.mq(sp) {
+        margin-top: 0px;
+    }
+  }
+}
+
+.contact__privacy {
+  margin-top: 32px;
+  text-align: center;
+  @include mixin.mq(sp) {
+   
+  }
+}
+
+.form-field {
+}
+
+.form-field__head {
+  width: 100%;
+}
+
+.form-field__label {
+  color: color.$base-color2;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 10px;
+  @include mixin.mq(sp) {
+    font-size: 1.6rem;
+    margin-right: 5px;
+  }
+}
+
+.form-field__tag {
+  display: inline-block;
+  border-radius: 6px;
+  background: color.$accent-color;
+  padding: 5px 8px 5px 8px;
+  color: color.$base-color3;
+  font-family: font.$font-ja;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include mixin.mq(sp) {
+    padding: 2px 5px;
+  }
+}
+
+.form-field__item {
+  margin-top: 5px;
+}
+
+.form-text {
+  width: 100%;
+  border: 1px solid color.$base-color;
+  background: #fff;
+  transition: border-color 0.3s;
+  padding: 13px 228px 14px 23px;
+  @include mixin.mq(sp) {
+    padding: 16px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: color.$accent-color;
+    outline: none;
+  }
+}
+
+.form-textarea {
+  width: 100%;
+  height: 160px;
+  padding: 16px;
+  border: 1px solid color.$base-color;
+  background: color.$base-color3;
+  transition: border-color 0.3s;
+
+  &:hover,
+  &:focus {
+    border-color: color.$accent-color;
+    outline: none;
+  }
+}
+
+.form-checkbox {
+  &:hover {
+    .form-checkbox__text {
+      &::before {
+        border-color: color.$accent-color;
+      }
+    }
+  }
+}
+
+.form-checkbox__input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+
+  &:checked {
+    + .form-checkbox__text {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:focus {
+    + .form-checkbox__text {
+      &::before {
+        border-color: color.$accent-color;
+      }
+    }
+  }
+}
+
+.form-checkbox__text {
+  position: relative;
+  padding-left: 40px;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.9px;
+  @include mixin.mq(sp) {
+    font-size: 1.55rem;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 40%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    width: 30px;
+    height: 30px;
+    border-radius: 1px;
+    border: 1px solid #111;
+    transition: border-color 0.3s;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  &::after {
+    width: 40px;
+    height: 40px;
+    left: -1px;
+    margin-top: 4px;
+    background: url(../img/contact__check.png) no-repeat center center / contain;
+    opacity: 0;
+  }
+
+  a {
+    color: color.$accent-color;
+    font-family: font.$font-ja;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-decoration-line: underline;
+    transition: color 0.3s;
+    @include mixin.mq(sp) {
+      font-size: 1.55rem;
+    }
+
+    &:hover {
+      color: color.$accent-color;
+      opacity: 0.7;
+    }
+  }
+}
+.contact__button-link {
+  text-align: center;
+  margin-top: 42px;
+}
+.contact__button {
+  padding: 15px 100px;
+  background: color.$base-color4;
+  color: #fff;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.9px;
+
+  @include mixin.mq(sp) {
+    padding: 15px 130px;
+  }
+
+  &.-active {
+    background: color.$accent-color;
+    color: #fff;
+  }
+
+  &:not(.-submit) {
+    &:hover {
+      background: color.$accent-color;
+      color: #fff;
+    }
+  }
+}
+
+::placeholder {
+  /* 全てのブラウザで動作 */
+  color: color.$base-color4;
+  font-family: font.$font-ja;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include mixin.mq(sp) {
+    font-size: 1.6rem;
+  }
+}
+
+/* モーダルCSS */
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  overflow-y: scroll;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal__bg {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1080px;
+  height: 600px;
+  background: #fff;
+  padding: 100px;
+  overflow-y: auto;
+  z-index: 10000000;
+  border-radius: 50px;
+  @include mixin.mq(tab) {
+    width: 800px;
+    height: 500px;
+    padding: 40px;
+
+  }
+  @include mixin.mq(sp) {
+    width: 350px;
+    padding: 20px;
+    height: 500px;
+  }
+}
+.privacy_policy{
+  margin-top: 60px;
+  position: relative;
+}
+.privacy_policy-right{
+  text-align: right;
+}
+.ol__number{
+  counter-reset: list-counter;
+  li{
+    counter-increment: list-counter;
+    padding: 5px 0;
+    text-indent:-2em;
+    padding-left:2em;
+    &::before {
+       margin-right: 5px;
+    content: counter(list-counter)".";;
+       font-size: 1.2em;
+      font-weight: bold;
+      color:color.$accent-color;
+      padding-left: 10px;
+    }
+  }
+}
+
+.modal__content-title{
+  padding: 40px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 16px;
+  position: relative;
+  &::before{
+    content:"";
+    position: absolute;
+    top: 40%;
+    left:0;
+    width: 3px;
+    height: 30px;
+    background: color.$accent-color;
+    @include mixin.mq(sp) {
+      top: 30%;
+
+    }
+  }
+  @include mixin.mq(sp) {
+    padding: 20px 0;
+    padding-left: 10px;
+  }
+}
+.js-modal-close {
+  cursor: pointer;
+}
+
+.modal__content-link{
+  
+}
+.js-modal-close {
+  position: absolute;
+  top:50px;
+  right:50px;
+  font-size: 4rem;
+  @include mixin.mq(tab) {
+    top: 20px;
+    right: 20px;
+    font-size: 4rem; 
+  }
+  @include mixin.mq(sp) {
+    top: 5px;
+    right: 20px;
+    font-size: 3rem; 
+  }
+}
+
+.contact-message {
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+
+  &.-error {
+    color: #f00;
+  }
+}

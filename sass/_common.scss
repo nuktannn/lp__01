@@ -1,0 +1,153 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+base
+===============================*/
+html,
+body {
+  overflow-x: hidden;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: font.$font-ja;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  background: color.$base-color;
+
+  @include mixin.mq(small) {
+    min-width: 370px;
+    overflow-x: scroll;
+  }
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.inner {
+  max-width: mixin.$layout-width-inner;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  @include mixin.mq(tab) {
+    padding: 0 40px;
+  }
+
+  @include mixin.mq(sp) {
+    padding: 0 20px;
+  }
+}
+@include mixin.mq(pc) {
+  .pc-hidden {
+    display: none;
+  }
+}
+@include mixin.mq(tab) {
+  .pc-hidden {
+    display: none;
+  }
+}
+@include mixin.mq(sp) {
+  .sp-hidden {
+    display: none;
+  }
+}
+
+/*================================
+section
+===============================*/
+.section__sub-title {
+  color: color.$accent-color;
+  text-align: center;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  @include mixin.mq(sp) {
+    color: color.$accent-color;
+    font-size: 1.4rem;
+    letter-spacing: 0.7px;
+  }
+}
+.section__title {
+  margin-top: 8px;
+  text-align: center;
+  color: color.$base-color2;
+  font-family: font.$font-en;
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  position: relative;
+  @include mixin.mq(sp) {
+    font-size: 3.2rem;
+    letter-spacing: 1.6px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 47%;
+    width: 50px;
+    height: 2px;
+    background: color.$accent-color;
+    @include mixin.mq(sp) {
+      bottom: -10px;
+      left: 44%;
+    }
+  }
+}
+.section__color{
+  color: color.$base-color3;
+  &::after {
+    background: color.$base-color3;
+    left: 48.5%;
+    bottom: -15px;
+    @include mixin.mq(sp) {
+      left: 44%;
+    }
+  }
+}
+.section__color-about{
+  &::after {
+    left: 48.5%;
+    bottom: -15px;
+    @include mixin.mq(sp) {
+      left: 43%;
+      bottom: -11px;
+    }
+  }
+}
+.section__color-shop{
+  &::after {
+    left: 48.5%;
+    bottom: -15px;
+    @include mixin.mq(sp) {
+      left: 44%;
+    }
+  }
+}
+.section__color-contact{
+  &::after {
+    left: 46%;
+    bottom: -15px;
+    @include mixin.mq(sp) {
+      left: 44%;
+    }
+  }
+}
+

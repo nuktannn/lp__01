@@ -1,0 +1,77 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+header
+===============================*/
+.header {
+  background: color.$base-color;
+  height: 90px;
+  width: 100%;
+  padding: 16px 70px 16px 30px;
+  @include mixin.mq(sp) {
+    height: 60px;
+    padding: 15px 16px 15px 16px;
+  }
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  a {
+    img {
+      width: 117px;
+      display: block;
+      @include mixin.mq(sp) {
+        width: 55px;
+      }
+    }
+  }
+}
+
+.header__nav {
+  display: flex;
+  margin-left: auto;
+  gap: 40px;
+  @include mixin.mq(sp) {
+    gap: 20px;
+  }
+}
+
+.header__link {
+  color: color.$base-color3;
+  font-family: font.$font-en;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  position: relative;
+  @include mixin.mq(sp) {
+    font-size: 1.4rem;
+    letter-spacing: 0.42px;
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: color.$accent-color;
+    bottom: -20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: bottom 0.3s, opacity 0.3s;
+  }
+    
+  &:hover::after {
+    visibility: visible;
+    bottom: -5px; 
+    opacity: 1;
+  }
+}

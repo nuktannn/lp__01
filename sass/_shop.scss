@@ -1,0 +1,359 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+shop
+===============================*/
+.shop {
+  padding: 120px 0;
+  background: color.$main-color;
+  @include mixin.mq(tab) {
+    padding: 80px 0;
+  }
+  @include mixin.mq(sp) {
+    padding: 60px 0;
+  }
+}
+.shop__heading {
+}
+
+.map-wrap {
+  position: relative; 
+  margin: 80px auto 0;
+  height: 488px;
+  width: 100%;
+  aspect-ratio: auto 488 / 100;
+  @include mixin.mq(tab) {
+    height: 100%;
+  }
+  @include mixin.mq(sp) {
+    height: 250px;
+    aspect-ratio: auto 250 / 100;
+  }
+
+  iframe {
+    position: relative; 
+    z-index: 1; 
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+  .map-image {
+    position: absolute; 
+    z-index: 2; 
+    top: 49%; 
+    right: 22%; 
+    transform: translate(-50%, -50%); 
+    width: 150px;
+    height: 150px;
+    @include mixin.mq(tab) {
+      width: 100px;
+      height: 100px;
+    }
+    @include mixin.mq(sp) {
+      width: 72px;
+      height: 72px;
+      top: 55%; 
+      right: 8%; 
+    }
+  }
+}
+
+.shop__info {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 160px;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include mixin.mq(tab) {
+    gap: 40px;
+    max-width: 900px;
+    padding: 60px 0;
+  }
+  @include mixin.mq(sp) {
+    flex-direction: column;
+    padding: 46px 20px 0px;
+  }
+}
+
+.shop__info-left {
+}
+
+.shop__info-title {
+  display: flex;
+  align-items: baseline;
+  @include mixin.mq(sp) {
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 0.5;
+  }
+
+  img {
+    width: 209px;
+  }
+  span {
+    color: color.$base-color2;
+    font-family: font.$font-en;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 5px;
+  }
+}
+
+.span2 {
+  color: color.$base-color2;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  @include mixin.mq(tab) {
+    font-size: 1.6rem;
+  }
+  @include mixin.mq(sp) {
+    font-size: 1.6rem;
+  }
+}
+
+.shop__info-address {
+  margin-top: 25px;
+  color: color.$base-color2;
+  font-family: font.$font-ja;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  letter-spacing: 0.54px;
+  @include mixin.mq(tab) {
+    margin-top: 24px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+  @include mixin.mq(sp) {
+    margin-top: 32px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
+.shop__info-row {
+}
+.shop__table {
+  margin-top: 17px;
+  @include mixin.mq(tab) {
+    margin-top: 10px;
+  }
+  @include mixin.mq(sp) {
+    margin-top: 6px;
+  }
+
+  td {
+    color: color.$base-color2;
+    font-family: font.$font-ja;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    letter-spacing: 0.54px;
+    @include mixin.mq(tab) {
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+    @include mixin.mq(sp) {
+      font-size: 1.6rem;
+      line-height: 1.7;
+    }
+  }
+}
+.td-space {
+  padding-right: 10px;
+  @include mixin.mq(sp) {
+    padding-right: 5px;
+    width: 80px;
+  }
+}
+.shop__info-right {
+  img {
+    width: 700px;
+    @include mixin.mq(tab) {
+      width: 400px;
+    }
+    @include mixin.mq(sp) {
+      width: 100%;
+      margin-top: -120px;
+      height: 300px;
+    }
+  }
+}
+
+.shop__card {
+  background: color.$base-color3;
+  max-width: 1146px;
+  margin: 0 auto;
+  padding: 30px 32px 40px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  position: relative;
+  @include mixin.mq(tab) {
+    max-width: 900px;
+  }
+  @include mixin.mq(sp) {
+    width: 90%;
+    padding: 18px 10px 110px;
+    margin: 98px auto 0;
+
+  }
+}
+.shop__card-heading {
+  display: flex;
+  justify-content: center;
+  @include mixin.mq(sp) {
+    flex-direction: column;
+  }
+}
+.shop__card-stamp {
+  img {
+    position: absolute;
+    top: -70px;
+    left: -100px;
+    width: 288px;
+    @include mixin.mq(tab) {
+      width: 200px;
+      left: -50px;
+      top: -40px;
+    }
+    @include mixin.mq(sp) {
+      width: 112px;
+      height: 93px;
+      left: -20px;
+      top: -40px;
+    }
+  }
+}
+.shop__card-left-pc {
+  img {
+    width: 629px;
+    @include mixin.mq(tab) {
+      width: 500px;
+    }
+    @include mixin.mq(sp) {
+     display: none;
+    }
+  }
+}
+
+.shop__card-left-sp {
+  img {
+   width: 100%;
+    @include mixin.mq(pc) {
+      display: none;
+    }
+    @include mixin.mq(tab) {
+     display: none;
+    }
+  }
+}
+
+.shop__card-right-pc {
+  img {
+    width: 449px;
+    @include mixin.mq(tab) {
+      width: 358px;
+    }
+    @include mixin.mq(sp) {
+      display: none;
+    }
+  }
+}
+
+.shop__card-right-sp {
+  img {
+   width: 100%;
+    @include mixin.mq(pc) {
+      display: none;
+    }
+    @include mixin.mq(tab) {
+     display: none;
+    }
+  }
+}
+
+.shop__body {
+  text-align: center;
+  display: flex;
+    gap:30px;
+  @include mixin.mq(sp) {
+    width: 100%;
+    padding-left: 10px;
+    gap: 0;
+    flex-direction: column;
+  }
+}
+.shop__body-dear {
+  margin-top: 30px;
+  img {
+
+    width: 198px;
+    @include mixin.mq(tab) {
+      width: 125px;
+    }
+    @include mixin.mq(sp) {
+      width: 125px;
+    }
+  }
+}
+.shop__body-nice-day {
+  img {
+    position: absolute;
+    bottom: 10px;
+    right: 45px;
+    width: 303px;
+    @include mixin.mq(tab) {
+      width: 303px;
+      right: 20px;
+      bottom: 20px;
+    }
+    @include mixin.mq(sp) {
+      width: 303px;
+      right: 0px;
+      bottom: 35px;
+    }
+  }
+}
+.shop__message {
+  display: inline-block;
+  text-align: left;
+  margin-top: 45px;
+  color: color.$base-color5;
+  font-family: font.$font-ja;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 250%; /* 40px */
+  background-image: linear-gradient(
+    transparent 0,
+    transparent 97%,
+    #c4c4c4 100%
+  );
+  background-size: 100% 2.5em; 
+  line-height: 2.5em; 
+  @include mixin.mq(tab) {
+    font-size: 1.6rem;
+  }
+  @include mixin.mq(sp) {
+    font-size: 1.6rem;
+    margin-top: 28px;
+    width: 100%;
+
+  }
+}

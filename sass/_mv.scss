@@ -1,0 +1,142 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+mv
+===============================*/
+.mv {
+  background: color.$base-color;
+  position: relative;
+}
+
+.mv__inner {
+}
+
+.mv__bg-pc img {
+    @include mixin.mq(pc) {
+      max-width: 80%; 
+      margin-left: auto;
+      height: 45vw;
+    }
+      @include mixin.mq(tab) {
+        width: 70%;
+        margin-left: auto;
+      }
+      @include mixin.mq(sp) {
+        display: none;
+      }
+  }
+.mv__bg-sp{
+    @include mixin.mq(sp) {
+       width: 80%;
+        margin-left: auto;
+    }
+    @include mixin.mq(pc) {
+        display: none;
+    }
+    @include mixin.mq(tab) {
+        display: none;
+    }
+}
+
+
+.mv__body {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  @include mixin.mq(tab) {
+    top: 10%;
+  left: 15%;
+  }
+  @include mixin.mq(sp) {
+    top: 12%;
+    left:5%;
+  }
+}
+
+.mv__body-title {
+  color: color.$base-color3;
+  font-family: font.$font-en;
+  font-size: clamp(7rem, 7vw, 25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 7vw; 
+  
+  @include mixin.mq(tab) {
+    font-size: clamp(7rem, 7vw, 8rem);
+    line-height: 7vw;
+  }
+  @include mixin.mq(sp) {
+    font-size: clamp(4rem, 9vw, 10rem);
+    line-height: clamp(4rem, 10vw, 10rem);
+  }
+  span {
+    color: color.$accent-color;
+    font-family: font.$font-en;
+    font-size: 7vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 7vw;
+    @include mixin.mq(tab) {
+      font-size: 7vw;
+      line-height: 7vw;
+    }
+    @include mixin.mq(sp) {
+      font-size:clamp(4rem, 9vw, 10rem);
+      line-height: normal;
+    }
+  }
+}
+
+.mv__body-text {
+  margin-top: 50px;
+  color: color.$base-color3;
+  font-family: font.$font-ja;
+  font-size: 2.5vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  margin-left: 20px;
+  @include mixin.mq(tab) {
+    font-size: 2.5vw;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+  @include mixin.mq(sp) {
+    font-size: clamp(1rem, 4vw, 4rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    margin-top: 0px;
+    margin-left: 3px;
+  }
+}
+.mv__body-text-color {
+  margin-top: 20px;
+  color: color.$base-color3;
+  font-family: font.$font-ja;
+  font-size: 2.5vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  margin-left: 0px;
+  background: color.$accent-color;
+  padding: 9px 0px;
+  padding-right: 20px;
+  @include mixin.mq(tab) {
+    font-size: 2.5vw;
+  }
+  @include mixin.mq(sp) {
+    font-size: clamp(1rem, 4vw, 4rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    padding: 5px 0px;
+    margin-top: 8px;
+  }
+}
